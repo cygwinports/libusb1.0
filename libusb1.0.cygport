@@ -1,0 +1,17 @@
+NAME="libusb1.0"
+VERSION=1.0.17
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="USB library"
+DESCRIPTION="libusbx is a library that provides generic access to USB devices.
+As a library, it is meant to be used by developers, to facilitate the
+production of applications that communicate with USB hardware.  It is portable,
+user-mode, and supports all versions of the USB protocol."
+HOMEPAGE="http://libusbx.org/"
+SRC_URI="mirror://sourceforge/libusbx/libusbx-${VERSION}.tar.bz2"
+SRC_DIR="libusbx-${VERSION}"
+PATCH_URI="1.0.17-cygwin.patch"
+
+PKG_NAMES="${NAME} ${NAME}-devel"
+libusb1_0_CONTENTS="usr/bin/cygusb-1.0.dll usr/share/doc/"
+libusb1_0_devel_CONTENTS="usr/include/ usr/lib/libusb-1.0.dll.a usr/lib/pkgconfig/"
