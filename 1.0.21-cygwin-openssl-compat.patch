@@ -1,0 +1,18 @@
+These Win32 APIs conflict with OpenSSL's (e.g. when building spice-gtk)
+
+--- origsrc/libusb-1.0.21/libusb/libusb.h	2016-10-25 11:07:38.000000000 -0500
++++ src/libusb-1.0.21/libusb/libusb.h	2017-06-19 08:31:00.463995300 -0500
+@@ -71,6 +71,13 @@ typedef unsigned __int32  uint32_t;
+ #if defined(interface)
+ #undef interface
+ #endif
++#if defined(X509_NAME)
++#undef X509_NAME
++#undef X509_CERT_PAIR
++#undef X509_EXTENSIONS
++#undef PKCS7_SIGNER_INFO
++#undef OCSP_RESPONSE
++#endif
+ #if !defined(__CYGWIN__)
+ #include <winsock.h>
+ #endif
